@@ -22,9 +22,9 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mailio/go-web3/kit/config"
+	"github.com/mailio/go-web3-kit/config"
+	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 // NewAPIRouter initializes all public/secure api routes including short api description for swagger documentation

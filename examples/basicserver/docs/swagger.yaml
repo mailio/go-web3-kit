@@ -1,0 +1,10 @@
+info:
+  contact: {}
+  description: This is a basic server example using go-web3-kit
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Web3 Go Kit basic server
+  version: "1.0"
+paths: {}
+swagger: "2.0"

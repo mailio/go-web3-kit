@@ -30,6 +30,8 @@ var (
 type YamlConfig struct {
 	Version     string `yaml:"version"`     // Version of the server
 	Port        int    `yaml:"port"`        // Server port
+	Host        string `yaml:"host"`        // Servers host domain
+	Scheme      string `yaml:"scheme"`      // http or https
 	Swagger     bool   `yaml:"swagger"`     // Swagger on/off
 	Title       string `yaml:"title"`       // Service title
 	Description string `yaml:"description"` // Service description
