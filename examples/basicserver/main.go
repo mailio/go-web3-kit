@@ -7,11 +7,12 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/gin-gonic/gin"
 	"github.com/go-kit/log"
 	cfg "github.com/mailio/go-web3-kit/config"
-	"github.com/mailio/go-web3-kit/docs"
+	"github.com/mailio/go-web3-kit/examples/basicserver/api"
+	"github.com/mailio/go-web3-kit/examples/basicserver/docs"
 	w3srv "github.com/mailio/go-web3-kit/gingonic"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // Conf global config
@@ -59,8 +60,9 @@ func main() {
 	docs.SwaggerInfo.Description = "This is a basic server example using go-web3-kit"
 	docs.SwaggerInfo.Version = "1.0"
 	docs.SwaggerInfo.Host = fmt.Sprintf("%s:%d", Conf.Host, Conf.Port)
-	docs.SwaggerInfo.BasePath = "/api"
+	docs.SwaggerInfo.BasePath = "/"
 	docs.SwaggerInfo.Schemes = []string{Conf.Scheme}
+	ginSwagger.DefaultModelsExpandDepth(1)
 
 	// server wait to shutdown monitoring channels
 	done := make(chan bool, 1)
@@ -71,13 +73,10 @@ func main() {
 	// init routing (for endpoints)
 	router := w3srv.NewAPIRouter(&Conf.YamlConfig)
 
-	root := router.Group("/")
+	root := router.Group("/api")
 	{
-		root.GET("/", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{
-				"message": "pong",
-			})
-		})
+
+		root.GET("/pong", api.PingPongAPI)
 	}
 
 	// start server
