@@ -1,0 +1,8 @@
+version: 1.0
+port: 8080
+host: localhost # custom domain, for development leave localhost
+scheme: http # http or https
+title: Go Web3 Kit
+description: Go Web3 Kit service
+swagger: true
+mode: debug # "debug": or "release"

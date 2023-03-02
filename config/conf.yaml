@@ -1,0 +1,11 @@
+version: 1.0
+port: 8080
+host: localhost
+scheme: http
+title: Go Web3 Kit
+description: Go Web3 Kit framework
+swagger: false # expose swagger publicly
+mode: debug # "debug": or "release"
+
+# example of extended custom config
+test_endpoint: "this is test"

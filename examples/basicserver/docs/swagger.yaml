@@ -1,0 +1,32 @@
+definitions:
+  models.Pingpong:
+    properties:
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is a basic server example using go-web3-kit
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Web3 Go Kit basic server
+  version: "1.0"
+paths:
+  /api/pong:
+    get:
+      consumes:
+      - application/json
+      description: Returns all available virtual machien types and their resource
+        capacities
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Pingpong'
+      summary: Returns pong message
+      tags:
+      - PONG API
+swagger: "2.0"
