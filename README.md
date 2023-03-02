@@ -1,9 +1,16 @@
 # Go Web3 Kit
 
+Work in progress...
+
 ## Prerequisites
 
 install Swag:
-- `go get -u github.com/swaggo/swag/cmd/swag`
+- `go install github.com/swaggo/swag/cmd/swag@latest`
+
+init swag everytime new http API is added:
+```go
+swag init --parseDependency
+```
 
 ## Generating API Documentation
 
